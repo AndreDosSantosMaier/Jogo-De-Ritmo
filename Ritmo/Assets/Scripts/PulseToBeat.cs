@@ -8,8 +8,8 @@ public class PulseToBeat : MonoBehaviour
     [SerializeField] float _pulseSize = 1.15f;
     [SerializeField] float _returnSpeed = 5f;
     private Vector3 _startSize; 
-
     private void Start(){
+        
         _startSize = transform.localScale;
         if (_useTestBeat){
             StartCoroutine(Testbeat());
@@ -20,6 +20,7 @@ public class PulseToBeat : MonoBehaviour
     }
     public void Pulse(){
         transform.localScale = _startSize * _pulseSize;
+        
     }
     IEnumerator Testbeat(){
         while (true){

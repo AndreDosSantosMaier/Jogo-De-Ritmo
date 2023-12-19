@@ -35,7 +35,7 @@ public class Gun : MonoBehaviour
 
     void tiro()
     {   
-        if ((Time.time > canFire)&&(Fire == true)) //usa o botão m1 para atirar e verifica o se o player pode atirar
+        if ((Input.GetKey(KeyCode.Mouse0))&&(Time.time > canFire)&&(Fire == true)) //usa o botão m1 para atirar e verifica o se o player pode atirar
         {
             Fire = false;
             canFire = Time.time + PistlfireRate; //funciona como millis do arduino
