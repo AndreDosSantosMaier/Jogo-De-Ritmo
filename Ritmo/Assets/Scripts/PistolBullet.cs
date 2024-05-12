@@ -5,7 +5,6 @@ using UnityEngine;
 public class PistolBullet : MonoBehaviour
 {
     public float shotSpeed;
-    public ParticleSystem effect;
     private float bulletRange = Gun.PistolbulletRange; //variavel de range da arma retirada do script "Pistol" 
     
     // Start is called before the first frame update
@@ -21,6 +20,5 @@ public class PistolBullet : MonoBehaviour
     {
         if (collision.CompareTag("Enemy")|| collision.CompareTag("Obstacle")) //se acertar um inimigo ou obstaculo...
         Destroy(gameObject); //destroi o tiro
-        Instantiate(effect,transform.position,transform.rotation); //faz o tiro soltar particulas
     }
 }

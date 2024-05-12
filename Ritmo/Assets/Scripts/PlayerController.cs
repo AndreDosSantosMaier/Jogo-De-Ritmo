@@ -26,6 +26,12 @@ public class PlayerController : MonoBehaviour
         transform.Translate(moveInput * Time.deltaTime * moveSpeed);
         anim.SetBool("Move",(Mathf.Abs(moveInput.x) >0 || Mathf.Abs(moveInput.y) > 0)); //ativa animção de andar
     }
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+        }
+    }
 
 }
